@@ -23,7 +23,7 @@ func (hook FileLineHook) Levels() []log.Level {
 
 // Fire is required by logrus.
 func (hook FileLineHook) Fire(entry *log.Entry) error {
-	if pc, file, line, ok := runtime.Caller(8); ok {
+	if pc, file, line, ok := runtime.Caller(9); ok {
 		funcName := runtime.FuncForPC(pc).Name()
 		entry.Data["file"] = path.Base(file)
 		entry.Data["func"] = path.Base(funcName)

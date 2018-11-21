@@ -30,7 +30,7 @@ func OptSetInfoLevel(l logging.Logger) error {
 	return nil
 }
 
-// OptSetWarnLevel set logging level as Info.
+// OptSetWarnLevel set logging level as Warn.
 func OptSetWarnLevel(l logging.Logger) error {
 	if lg, ok := l.(*logger); ok {
 		lg.lg.SetLevel(log.WarnLevel)
@@ -39,7 +39,7 @@ func OptSetWarnLevel(l logging.Logger) error {
 	return nil
 }
 
-// OptSetErrorLevel set logging level as Info.
+// OptSetErrorLevel set logging level as Error.
 func OptSetErrorLevel(l logging.Logger) error {
 	if lg, ok := l.(*logger); ok {
 		lg.lg.SetLevel(log.ErrorLevel)
@@ -48,7 +48,7 @@ func OptSetErrorLevel(l logging.Logger) error {
 	return nil
 }
 
-// OptShowFileLine set logging level as Info.
+// OptShowFileLine set log file line.
 func OptShowFileLine(l logging.Logger) error {
 	if lg, ok := l.(*logger); ok {
 		lg.lg.AddHook(hooks.FileLineHook{})
